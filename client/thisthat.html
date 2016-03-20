@@ -1,0 +1,49 @@
+<head>
+  <title>thisthat</title>
+</head>
+
+<body>
+  <p class='header'>{{#unless imagesUploaded}}Welcome to {{/unless}}this<b>that{{#unless imagesUploaded}}!{{/unless}}</b></p>
+
+  {{#unless imagesUploaded}}
+  	{{> upload}}
+  {{/unless}}
+
+  {{#if imagesUploaded}}
+  	{{> images}}
+  	{{> compare}}
+  {{/if}}
+
+  <p class='footer'>Copyright 2016. designed by <b>Kevin Allen.</b> coded by <b>Matt Gleason.</b></p>
+</body>
+
+<template name="compare">
+	<div class='compareDiv'>
+	<table class='compareTable'>
+  		<td><button id='thisButton'>this</button></td>
+  		<td><p>or</p></td>
+  		<td><button id='thatButton'>that</button></td>
+  	</table>
+  	</div>
+</template>
+
+<template name="images">
+	<div class='imagesDiv'>
+  		<img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Claude_Monet_-_The_Houses_of_Parliament,_Sunset.jpg">
+  		<img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Claude_Monet_011.jpg">
+  </div>
+</template>
+
+<template name="upload">
+	<div class='uploadImages'>
+		<p>This is how it works:</p>
+		<p><b>Upload one image</b> and receive a link to share.</p>
+		<p>Visitors will be able choose <b>happy face</b> or <b>sad face!</b></p>
+		<p>OR</p>
+		<p><b>Upload two images</b> and receive a link to share.</p>
+		<p>Visitors will be able to choose <b>one</b> or <b>the other!</b></p>
+		<form action="/file-upload" class="dropzone" id="my-awesome-dropzone"></form>
+		<!--<input type="file" class='thisUpload' name="this" accept="image/*">
+		<input type="file" class='thatUpload' name="that" accept="image/*">-->
+	</div>
+</template>

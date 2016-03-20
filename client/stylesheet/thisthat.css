@@ -1,0 +1,58 @@
+/* CSS declarations go here */
+
+body {
+	font-family: "freight sans" !important;
+	text-align: center;
+}
+
+.header {
+	font-size: x-large;
+}
+
+.footer {
+	font-size: x-small;
+}
+
+.footer b {
+	color: Aqua;
+}
+
+.compareDiv {
+	text-align: center;
+}
+
+.imagesDiv {
+	text-align: center;
+}
+
+.uploadImages {
+	text-align: center;
+}
+
+table {
+	width: 40%;
+	margin: 0 auto;
+}
+
+table td {
+	width: 30%;
+}
+
+#thisButton {
+	border-width: 6px 20px;
+	border-radius: 4px;
+	border-style: solid;
+	-webkit-text-stroke: 1px black;
+}
+
+#thatButton {
+	border-width: 6px 20px;
+	border-radius: 4px;
+	border-style: solid;
+	-webkit-text-stroke: 1px black;
+}
+
+.imagesDiv img {
+	width:20%; /* you can use % */
+    height: auto;
+}

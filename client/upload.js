@@ -8,7 +8,6 @@ Template.upload.rendered = function(){
 
     // Adds file uploading and adds the imageID of the file uploaded
     // to the arrayOfImageIds object.
-
     var dropzone = new Dropzone("form#dropzone", {
         accept: function(file, done){
           var fsFile = new FS.File(file);
@@ -26,6 +25,7 @@ Template.upload.rendered = function(){
                 };
             });
         },
+        //prevent more than two uploaded images
         init: function() {
           this.on("addedfile", function() {
             if (this.files[2]!=null){

@@ -4,6 +4,13 @@ body {
 	font-family: "freight sans" !important;
 }
 
+.linkShare {
+	margin: 0 auto;
+	width: 70%;
+    border: 2px solid rgba(0, 0, 0, 0.3);
+    background: white;
+}
+
 .dropzone {
 	margin: 0 auto;
 	width: 40%;

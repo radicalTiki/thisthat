@@ -2,6 +2,7 @@
   <title>thisthat</title>
 </head>
 
+<template name="bodytemp">
 <body>
   <p class='header'>{{#unless imagesUploaded}}Welcome to {{/unless}}this<b>that{{#unless imagesUploaded}}!{{/unless}}</b></p>
 
@@ -12,19 +13,35 @@
   {{> upload}}
 
   {{#if imagesUploaded}}
-  	{{> compare}}
+    {{#if shared}}
+  	     {{> linkShare}}
+    {{/if}}
+    {{#unless shared}}
+        {{> compare}}
+    {{/unless}}
   {{/if}}
 
   <p class='footer'>Copyright 2016. designed by <b>Kevin Allen.</b> coded by <b>Matt Gleason.</b></p>
 </body>
+</template>
 
 <template name="compare">
 	<div class='compareDiv'>
 	<table class='compareTable'>
   		<tr><p>When finished, click this button</p></tr>
-  		<tr><button id='shareLink'>Create Share Link</button></tr>
+  		<tr><button class='shareLink'>Create Share Link</button></tr>
   	</table>
   	</div>
+</template>
+
+<template name="linkShare">
+  <div class='compareTable'>
+  <table class='compareTable'>
+      <tr><p>share this link!</p></tr>
+      <tr><p class='linkShare'>http://localhost:3000/vote?voteid={{ route}}</p></tr>
+      <tr><a href="{{pathFor route='home'}}/vote?voteid={{ route}}">Or click here</a></tr>
+  </table>
+  </div>
 </template>
 
 <template name="createImages">

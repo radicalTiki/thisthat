@@ -1,18 +1,18 @@
-Images = new FS.Collection("images", {
-  stores: [new FS.Store.FileSystem("images", {path: "../uploads"})],
-  filter: {
-    maxSize: 3145728,
-    allow: {
-      contentTypes: ['image/*'],
-      extensions: ['png','jpg','jpeg','gif']
+MyImages = new FS.Collection('myImages', {
+    stores: [new FS.Store.GridFS("myImages")],
+    filter: {
+      maxSize: 3145728,
+      allow: {
+        contentTypes: ['image/*'],
+        extensions: ['png','jpg','jpeg','gif']
+      }
+    },
+    onInvalid: function (message) {
+      alert(message);
     }
-  },
-  onInvalid: function (message) {
-    alert(message);
-  }
 });
 
-Images.allow({
+MyImages.allow({
     insert: function() { return true },
     update: function() { return true },
     remove: function() { return false }
@@ -24,7 +24,5 @@ if (Meteor.isClient) {
   console.log('clientId: ' + userId);
   Session.setDefault('userId', userId);
 
-  Meteor.subscribe('Images');
-
-  var Dropzone = require("dropzone");
+  Meteor.subscribe('MyImages');
 }

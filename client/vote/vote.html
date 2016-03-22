@@ -1,7 +1,12 @@
 <template name="vote">
 <body>
   <p class='header'>this<b>that</b></p>
-  {{ >images}}
+  <div class='imagesDiv'>
+      {{#each images}}
+        <a href="{{this.url}}" target="_blank"><img src="{{this.url store='myImages' uploading='/images/uploading.gif' storing='/images/storing.gif'}}" alt="" /></a>
+      {{/each}}
+  </div>
+  {{#if imagecounttwo images}}
   <div class='compareDiv'>
  	<table class='compareTable'>
    		<td><button id='thisButton'>this</button></td>
@@ -9,13 +14,16 @@
    		<td><button id='thatButton'>that</button></td>
    	</table>
   </div>
+  {{/if}}
+  {{#unless imagecounttwo images}}
+  <div class='compareDiv'>
+ 	<table class='compareTable'>
+   		<td><button id='okButton'>it's ok!</button></td>
+   		<td><p>or</p></td>
+   		<td><button id='likeButton'>i like it!</button></td>
+   	</table>
+  </div>
+  {{/unless}}
   <p class='footer'>Copyright 2016. designed by <b>Kevin Allen.</b> coded by <b>Matt Gleason.</b></p>
 </body>
-</template>
-
-<template name="images">
- 	<div class='imagesDiv'>
-   		<img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Claude_Monet_-_The_Houses_of_Parliament,_Sunset.jpg">
-   		<img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Claude_Monet_011.jpg">
-   </div>
 </template>

@@ -2,8 +2,6 @@ Template.upload.rendered = function(){
 
   if (Meteor.isClient){
 
-    var arrayOfImageIds = [];
-
     Dropzone.autoDiscover = false;
 
     // Adds file uploading and adds the imageID of the file uploaded
@@ -18,10 +16,6 @@ Template.upload.rendered = function(){
                   throw err;
                 } else {
                   console.log('Upload file with userId: ' + fsFile.owner);
-                  // gets the ID of the image that was uploaded
-                  var imageId = fileObj._id;
-                  // do something with this image ID, like save it somewhere
-                  arrayOfImageIds.push(imageId);
                 };
             });
         },

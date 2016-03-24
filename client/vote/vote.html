@@ -3,24 +3,24 @@
   <p class='header'>this<b>that</b></p>
   <div class='imagesDiv'>
       {{#each images}}
-        <a href="{{this.url}}" target="_blank"><img src="{{this.url store='myImages' uploading='/images/uploading.gif' storing='/images/storing.gif'}}" alt="" /></a>
+        <a href="{{this.url}}" target="_blank"><img class='voteimg' src="{{this.url store='myImages' uploading='/images/uploading.gif' storing='/images/storing.gif'}}" alt="" /></a>
       {{/each}}
   </div>
   {{#if imagecounttwo images}}
   <div class='compareDiv'>
  	<table class='compareTable'>
-   		<td><button id='thisButton'>this</button></td>
+   		<td><button id='thisButton' value='{{firstimage images}}'>this</button></td>
    		<td><p>or</p></td>
-   		<td><button id='thatButton'>that</button></td>
+   		<td><button id='thatButton' value='{{secondimage images}}'>that</button></td>
    	</table>
   </div>
   {{/if}}
   {{#unless imagecounttwo images}}
   <div class='compareDiv'>
  	<table class='compareTable'>
-   		<td><button id='okButton'>it's ok!</button></td>
+   		<td><button id='okButton' value='{{firstimage images}}'>it's ok!</button></td>
    		<td><p>or</p></td>
-   		<td><button id='likeButton'>i like it!</button></td>
+   		<td><button id='likeButton' value='{{firstimage images}}'>i like it!</button></td>
    	</table>
   </div>
   {{/unless}}

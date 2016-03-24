@@ -1,5 +1,6 @@
 <head>
   <title>thisthat</title>
+  <link rel="shortcut icon" href="/favicon.ico" />
 </head>
 
 <template name="bodytemp">
@@ -39,7 +40,6 @@
   <table class='compareTable'>
       <tr><p>share this link!</p></tr>
       <tr><p class='linkShare'>http://localhost:3000/vote?voteid={{ route}}</p></tr>
-      <tr><a href="{{pathFor route='home'}}/vote?voteid={{ route}}">Or click here</a></tr>
   </table>
   </div>
 </template>
@@ -59,4 +59,10 @@
   <form action="/file-upload" class="dropzone" id="dropzone">
      <p class="dz-message">Drag and drop one or two images.</p>
    </form>
+   <div id="preview" class="dz-preview dz-file-preview">
+  <div class="dz-details">
+    <img data-dz-thumbnail />
+  </div>
+  <div class="dz-error-message"><span data-dz-errormessage></span></div>
+</div>
 </template>

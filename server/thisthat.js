@@ -17,3 +17,11 @@ MyImages.allow({
     update: function() { return true },
     remove: function() { return false }
 });
+
+Votes = new Mongo.Collection("votes");
+
+Votes.allow({
+    insert: function() { return true},
+    update: function() { return true},
+    remove: function() { return false}
+});

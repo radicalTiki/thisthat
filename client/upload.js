@@ -7,6 +7,11 @@ Template.upload.rendered = function(){
     // Adds file uploading and adds the imageID of the file uploaded
     // to the arrayOfImageIds object.
     var dropzone = new Dropzone("form#dropzone", {
+        addRemoveLinks: true,
+        dictRemoveFile: 'remove image',
+        thumbnailWidth: "250",
+        thumbnailHeight: "250",
+        previewTemplate: document.querySelector('#preview').innerHTML,
         accept: function(file, done){
           var fsFile = new FS.File(file);
           fsFile.owner = Session.get('userId');

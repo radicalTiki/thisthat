@@ -6,24 +6,35 @@
         <a href="{{this.url}}" target="_blank"><img class='voteimg' src="{{this.url store='myImages' uploading='/images/uploading.gif' storing='/images/storing.gif'}}" alt="" /></a>
       {{/each}}
   </div>
-  {{#if imagecounttwo images}}
-  <div class='compareDiv'>
- 	<table class='compareTable'>
-   		<td><button id='thisButton' value='{{firstimage images}}'>this</button></td>
-   		<td><p>or</p></td>
-   		<td><button id='thatButton' value='{{secondimage images}}'>that</button></td>
-   	</table>
-  </div>
-  {{/if}}
-  {{#unless imagecounttwo images}}
-  <div class='compareDiv'>
- 	<table class='compareTable'>
-   		<td><button id='okButton' value='{{firstimage images}}'>it's ok!</button></td>
-   		<td><p>or</p></td>
-   		<td><button id='likeButton' value='{{firstimage images}}'>i like it!</button></td>
-   	</table>
-  </div>
+  {{#unless uservoted}}
+    {{#if imagecounttwo images}}
+    <div class='compareDiv'>
+   	<table class='compareTable'>
+     		<td><button id='thisButton' value='{{firstimage images}}'>this</button></td>
+     		<td><p>or</p></td>
+     		<td><button id='thatButton' value='{{secondimage images}}'>that</button></td>
+     	</table>
+    </div>
+    {{/if}}
+    {{#unless imagecounttwo images}}
+    <div class='compareDiv'>
+   	<table class='compareTable'>
+     		<td><button id='okButton' value='{{firstimage images}}'>it's ok!</button></td>
+     		<td><p>or</p></td>
+     		<td><button id='likeButton' value='{{firstimage images}}'>i like it!</button></td>
+     	</table>
+    </div>
+    {{/unless}}
   {{/unless}}
+  {{#if uservoted}}
+    <div class='compareDiv'>
+    <table class='compareTable'>
+        <td><button id='firstVote'>{{firstvote images}}</button></td>
+        <td><p>or</p></td>
+        <td><button id='secondVote'>{{secondvote images}}</button></td>
+      </table>
+    </div>
+  {{/if}}
   <p class='footer'>Copyright 2016. designed by <b>Kevin Allen.</b> coded by <b>Matt Gleason.</b></p>
 </body>
 </template>

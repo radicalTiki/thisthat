@@ -1,3 +1,8 @@
+var createThumb = function(fileObj, readStream, writeStream) {
+  // Transform the image into a 10x10px thumbnail
+  gm(readStream, fileObj.name()).resize('250', '250').stream().pipe(writeStream);
+};
+
 MyImages = new FS.Collection('myImages', {
     stores: [new FS.Store.GridFS("myImages")],
     filter: {
@@ -15,7 +20,7 @@ MyImages = new FS.Collection('myImages', {
 MyImages.allow({
     insert: function() { return true },
     update: function() { return true },
-    remove: function() { return false }
+    remove: function() { return true }
 });
 
 Votes = new Mongo.Collection("votes");

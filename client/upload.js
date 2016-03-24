@@ -12,6 +12,18 @@ Template.upload.rendered = function(){
         thumbnailWidth: "250",
         thumbnailHeight: "250",
         previewTemplate: document.querySelector('#preview').innerHTML,
+        removedfile: function(file) {
+          console.log(file);
+          MyImages.remove(file._id, function(err, fielObj) {
+            if(err){
+                  throw err;
+                } else {
+                  console.log('Removed file with id: ' + file._id);
+                };
+            });
+          var _ref;
+          return (_ref = file.previewElement) != null ? _ref.parentNode.removeChild(file.previewElement) : void 0;
+        },
         accept: function(file, done){
           var fsFile = new FS.File(file);
           fsFile.owner = Session.get('userId');
@@ -21,6 +33,7 @@ Template.upload.rendered = function(){
                   throw err;
                 } else {
                   console.log('Upload file with userId: ' + fsFile.owner);
+                  file._id = fileObj._id;
                 };
             });
         },

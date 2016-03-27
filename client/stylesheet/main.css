@@ -56,7 +56,7 @@ table td {
 	cursor: pointer !important;
 }
 
-.linkShare {
+#linkShare {
 	margin: 0 auto;
     border: 2px solid rgba(0, 0, 0, 0.3);
     background: white;

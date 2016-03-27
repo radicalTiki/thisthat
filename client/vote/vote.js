@@ -68,7 +68,7 @@ Template.vote.events({
 	},
 	'click #okButton': function(event) {
 		if (Votes.findOne({_id: $('#okButton').val()}) == null) {
-			Votes.insert({_id: $('#okButton').val(), votefor: 1});
+			Votes.insert({_id: $('#okButton').val(), votefor: 1, voteagainst: 0});
 			console.log('inserted into votes: ' + $('#okButton').val());
 			Session.setDefault('uservoted', true);
 		} else {
@@ -84,7 +84,7 @@ Template.vote.events({
 	},
 	'click #likeButton': function(event) {
 		if (Votes.findOne({_id: $('#likeButton').val()}) == null) {
-			Votes.insert({_id: $('#likeButton').val(), voteagainst: 1});
+			Votes.insert({_id: $('#likeButton').val(), voteagainst: 1, voteagainst: 0});
 			console.log('inserted into votes: ' + $('#likeButton').val());
 			Session.setDefault('uservoted', true);
 		} else {

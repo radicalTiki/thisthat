@@ -5,10 +5,13 @@ Template.linkShare.helpers ({
 });
 
 Template.linkShare.events ({
-	'click .shareButton': function(event) {
+	'click .shareButton': function(event) {	
 		console.log('share button clicked');
 		//var Copied = $('.linkShare').text();
-		var Copied = document.querySelector('.linkShare').innerHTML.createTextRange();
-		Copied.execCommand("Copy");
+		copyToClipboard(document.getElementById('linkShare').innerHTML);
 	}
 });
+
+function copyToClipboard(text) {
+	window.prompt("Copy to clipboard: Ctrl+C, Enter", text);
+}

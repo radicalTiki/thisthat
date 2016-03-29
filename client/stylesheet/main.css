@@ -13,6 +13,10 @@ body {
 	font-size: large;
 }
 
+.footer a {
+	text-decoration: none !important;
+}
+
 .footer b {
 	color: Aqua;
 }

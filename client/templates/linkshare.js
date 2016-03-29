@@ -7,7 +7,6 @@ Template.linkShare.helpers ({
 Template.linkShare.events ({
 	'click .shareButton': function(event) {	
 		console.log('share button clicked');
-		//var Copied = $('.linkShare').text();
 		copyToClipboard(document.getElementById('linkShare').innerHTML);
 	}
 });

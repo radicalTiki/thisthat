@@ -58,9 +58,6 @@ Template.vote.events({
 			console.log('updated ip: ' + Session.get('ip'));
 			Session.setDefault('uservoted', true);
 		}
-		
-		//console.log('images in event' + $('#thisButton').val());
-		//console.log('this button clicked');
 	},
 	'click #thatButton': function(event) {
 		if (Votes.findOne({_id: $('#thatButton').val()}) == null) {
@@ -77,9 +74,6 @@ Template.vote.events({
 			console.log('updated ip: ' + Session.get('ip'));
 			Session.setDefault('uservoted', true);
 		}
-
-		//console.log('images in event' + $('#thatButton').val());
-		//console.log('that button clicked');
 	},
 	'click #okButton': function(event) {
 		if (Votes.findOne({_id: $('#okButton').val()}) == null) {
@@ -96,9 +90,6 @@ Template.vote.events({
 			console.log('updated ip: ' + Session.get('ip'));
 			Session.setDefault('uservoted', true);
 		}
-
-		//console.log('images in event' + $('#okButton').val());
-		//console.log('ok button clicked');
 	},
 	'click #likeButton': function(event) {
 		if (Votes.findOne({_id: $('#likeButton').val()}) == null) {
@@ -115,8 +106,5 @@ Template.vote.events({
 			console.log('updated ip: ' + Session.get('ip'));
 			Session.setDefault('uservoted', true);
 		}
-
-		//console.log('images in event' + $('#likeButton').val());
-		//console.log('like button clicked');
 	},
 });

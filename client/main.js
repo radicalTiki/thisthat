@@ -41,13 +41,13 @@ if (Meteor.isClient) {
   Meteor.subscribe('votes');
 
   Meteor.call('getIP', function(error, result){
-            if(error){
-               //Error handling code
-            }
-            else {
-                Session.set("ip", result);
-            }
-        });
+      if(error){
+         //Error handling code
+      }
+      else {
+          Session.set("ip", result);
+      }
+  });
 
   var ip = Session.get("ip");
   console.log('clientip: ' + ip);

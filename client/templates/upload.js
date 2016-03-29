@@ -3,9 +3,7 @@ Template.upload.rendered = function(){
   if (Meteor.isClient){
 
     Dropzone.autoDiscover = false;
-
-    // Adds file uploading and adds the imageID of the file uploaded
-    // to the arrayOfImageIds object.
+    
     var dropzone = new Dropzone("form#dropzone", {
         addRemoveLinks: true,
         dictRemoveFile: 'remove image',

@@ -27,7 +27,7 @@ Votes.allow({
 });
 
 Meteor.methods({
-    getIP: function(){
+    getIP: function() {
         var ip = this.connection.clientAddress;
         return ip;
     }

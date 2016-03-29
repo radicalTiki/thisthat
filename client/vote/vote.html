@@ -1,12 +1,12 @@
 <template name="vote">
 <body>
-  <p class='header'>this<b>that</b></p>
+  <p class='header'>chooose.io</p>
   <div class='imagesDiv'>
       {{#each images}}
         <a href="{{this.url}}" target="_blank"><img class='voteimg' src="{{this.url store='myImages' uploading='/images/uploading.gif' storing='/images/storing.gif'}}" alt="" /></a>
       {{/each}}
   </div>
-  {{#unless uservoted}}
+  {{#unless uservoted images}}
     {{#if imagecounttwo images}}
     <div class='compareDiv'>
    	<table class='compareTable'>
@@ -26,7 +26,7 @@
     </div>
     {{/unless}}
   {{/unless}}
-  {{#if uservoted}}
+  {{#if uservoted images}}
     <div class='compareDiv'>
     <table class='compareTable'>
         <td><button id='firstVote'>{{firstvote images}}</button></td>
@@ -35,6 +35,6 @@
       </table>
     </div>
   {{/if}}
-  <p class='footer'>Copyright 2016. <!--designed by <b>Kevin Allen.</b> coded by <b>Matt Gleason.</b>--></p>
+  <p class='footer'>Copyright 2016. designed by <b>Kevin Allen.</b> coded by <b>Matt Gleason.</b></p>
 </body>
 </template>

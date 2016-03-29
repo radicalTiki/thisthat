@@ -25,3 +25,10 @@ Votes.allow({
     update: function() { return true},
     remove: function() { return false}
 });
+
+Meteor.methods({
+    getIP: function(){
+        var ip = this.connection.clientAddress;
+        return ip;
+    }
+});

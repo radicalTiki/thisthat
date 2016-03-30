@@ -46,9 +46,9 @@ Template.vote.events({
 	'click #thisButton': function(event) {
 		if (Votes.findOne({_id: $('#thisButton').val()}) == null) {
 			Votes.insert({_id: $('#thisButton').val(), votefor: 1, ips: [Session.get('ip')]});
+			Votes.insert({_id: $('#thatButton').val(), votefor: 0, ips: [Session.get('ip')]});
 			console.log('inserted into votes: ' + $('#thisButton').val());
 			console.log('inserted ip: ' + Session.get('ip'));
-			Session.setDefault('uservoted', true);
 		} else {
 			Votes.update($('#thisButton').val(), {
 				$inc: {votefor: 1},
@@ -56,15 +56,14 @@ Template.vote.events({
 			});
 			console.log('updated votes: ' + $('#thisButton').val());
 			console.log('updated ip: ' + Session.get('ip'));
-			Session.setDefault('uservoted', true);
 		}
 	},
 	'click #thatButton': function(event) {
 		if (Votes.findOne({_id: $('#thatButton').val()}) == null) {
 			Votes.insert({_id: $('#thatButton').val(), votefor: 1, ips: [Session.get('ip')]});
+			Votes.insert({_id: $('#thisButton').val(), votefor: 0, ips: [Session.get('ip')]});
 			console.log('inserted into votes: ' + $('#thatButton').val());
 			console.log('inserted ip: ' + Session.get('ip'));
-			Session.setDefault('uservoted', true);
 		} else {
 			Votes.update($('#thatButton').val(), {
 				$inc: {votefor: 1},
@@ -72,7 +71,6 @@ Template.vote.events({
 			});
 			console.log('updated votes: ' + $('#thatButton').val());
 			console.log('updated ip: ' + Session.get('ip'));
-			Session.setDefault('uservoted', true);
 		}
 	},
 	'click #okButton': function(event) {
@@ -80,7 +78,6 @@ Template.vote.events({
 			Votes.insert({_id: $('#okButton').val(), votefor: 1, voteagainst: 0, ips: [Session.get('ip')]});
 			console.log('inserted into votes: ' + $('#okButton').val());
 			console.log('inserted ip: ' + Session.get('ip'));
-			Session.setDefault('uservoted', true);
 		} else {
 			Votes.update($('#okButton').val(), {
 				$inc: {votefor: 1},
@@ -88,7 +85,6 @@ Template.vote.events({
 			});
 			console.log('updated votes: ' + $('#okButton').val());
 			console.log('updated ip: ' + Session.get('ip'));
-			Session.setDefault('uservoted', true);
 		}
 	},
 	'click #likeButton': function(event) {
@@ -96,7 +92,6 @@ Template.vote.events({
 			Votes.insert({_id: $('#likeButton').val(), voteagainst: 1, votefor: 0, ips: [Session.get('ip')]});
 			console.log('inserted into votes: ' + $('#likeButton').val());
 			console.log('inserted ip: ' + Session.get('ip'));
-			Session.setDefault('uservoted', true);
 		} else {
 			Votes.update($('#likeButton').val(), {
 				$inc: {voteagainst: 1},
@@ -104,7 +99,6 @@ Template.vote.events({
 			});
 			console.log('updated votes: ' + $('#likeButton').val());
 			console.log('updated ip: ' + Session.get('ip'));
-			Session.setDefault('uservoted', true);
 		}
 	},
 });

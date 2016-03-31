@@ -3,7 +3,7 @@
   <p class='header'>chooose.io</p>
   <div class='imagesDiv'>
       {{#each images}}
-        <a href="{{this.url}}" target="_blank"><img class='voteimg' src="{{this.url store='myImages' uploading='/images/uploading.gif' storing='/images/storing.gif'}}" alt="" /></a>
+        <a href="{{this.url}}" target="_blank"><img class='voteimg' src="{{this.url store='myImages' uploading='/images/uploading.gif' storing='/images/storing.gif'}}" alt="Image to vote on" /></a>
       {{/each}}
   </div>
   {{#unless uservoted images}}

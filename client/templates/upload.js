@@ -11,7 +11,7 @@ Template.upload.rendered = function(){
         thumbnailHeight: "250",
         previewTemplate: document.querySelector('#preview').innerHTML,
         removedfile: function(file) {
-          console.log(file);
+          //console.log(file);
           MyImages.remove(file._id, function(err, fielObj) {
             if(err){
                   throw err;

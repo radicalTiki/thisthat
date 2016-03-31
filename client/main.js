@@ -32,13 +32,12 @@ Votes.allow({
 });
 
 if (Meteor.isClient) {
-  console.log('new client');
-  var userId = Random.id();
-  console.log('clientId: ' + userId);
-  Session.setDefault('userId', userId);
-
-  Meteor.subscribe('MyImages');
+  Meteor.subscribe('myImages');
   Meteor.subscribe('votes');
+  //console.log('new client');
+  var userId = Random.id();
+  //console.log('clientId: ' + userId);
+  Session.setDefault('userId', userId);
 
   Meteor.call('getIP', function(error, result){
       if(error){
@@ -50,5 +49,5 @@ if (Meteor.isClient) {
   });
 
   var ip = Session.get("ip");
-  console.log('clientip: ' + ip);
+  //console.log('clientip: ' + ip);
 }

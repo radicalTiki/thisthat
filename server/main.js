@@ -32,3 +32,11 @@ Meteor.methods({
         return ip;
     }
 });
+
+Meteor.publish('myImages', function imagesPublication() {
+    return MyImages.find();
+});
+
+Meteor.publish('votes', function votesPublication() {
+    return Votes.find();
+});

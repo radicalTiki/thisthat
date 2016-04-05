@@ -22,6 +22,7 @@
 
 <template name="bodytemp">
 <body>
+  {{#transition wrap="true" in="bounceIn" out="bounceOut"}}
   <p class='header'>{{#unless imagesUploaded}}Welcome to {{/unless}}chooose.io{{#unless imagesUploaded}}!{{/unless}}</p>
 
   {{#unless imagesUploaded}}
@@ -38,7 +39,7 @@
         {{> compare}}
     {{/unless}}
   {{/if}}
-
+  {{/transition}}
   <p class='footer'>Copyright 2016. designed by <a href="https://twitter.com/apopagasm"><b>Kevin Allen.</b></a> coded by <a href="https://www.linkedin.com/in/matt-gleason-4352127b"><b>Matt Gleason.</b></a></p>
 </body>
 </template>

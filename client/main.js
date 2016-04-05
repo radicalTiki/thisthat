@@ -32,8 +32,8 @@ Votes.allow({
 });
 
 if (Meteor.isClient) {
-  Meteor.subscribe('myImages');
   Meteor.subscribe('votes');
+  Meteor.subscribe('myImages');
   //console.log('new client');
   var userId = Random.id();
   //console.log('clientId: ' + userId);

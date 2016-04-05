@@ -1,5 +1,6 @@
 <template name="vote">
 <body>
+  {{#transition wrap="true" in="bounceIn" out="bounceOutRight"}}
   <p class='header'>chooose.io</p>
   <div class='imagesDiv'>
       {{#each images}}
@@ -36,5 +37,6 @@
     </div>
   {{/if}}
   <p class='footer'>Copyright 2016. designed by <b>Kevin Allen.</b> coded by <b>Matt Gleason.</b></p>
+  {{/transition}}
 </body>
 </template>
